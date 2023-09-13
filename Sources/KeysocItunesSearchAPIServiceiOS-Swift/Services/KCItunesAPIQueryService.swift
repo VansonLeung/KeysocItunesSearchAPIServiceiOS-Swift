@@ -18,6 +18,9 @@ public class KCITunesAPIQueryService {
         withQuery query: String,
         limit: Int = 10,
         offset: Int = 0,
+        mediaType: String? = nil,
+        country: String? = nil,
+        lang: String? = nil,
         completion: @escaping (Result<[KCItunesSong], Error>) -> Void) {
         
             // Construct the URL with query parameters
@@ -28,6 +31,10 @@ public class KCITunesAPIQueryService {
                 URLQueryItem(name: "offset", value: "\(offset)"),
                 URLQueryItem(name: "entity", value: "musicTrack"),
             ]
+            
+            if let e = mediaType?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "mediaType", value: e)) }
+            if let e = country?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "country", value: e)) }
+            if let e = lang?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "lang", value: e)) }
 
             guard let url = components?.url else {
                 completion(.failure(KCItunesConstants.NetworkError.invalidURL))
@@ -54,6 +61,9 @@ public class KCITunesAPIQueryService {
         withQuery query: String,
         limit: Int = 10,
         offset: Int = 0,
+        mediaType: String? = nil,
+        country: String? = nil,
+        lang: String? = nil,
         completion: @escaping (Result<[KCItunesAlbum], Error>) -> Void) {
         
             // Construct the URL with query parameters
@@ -64,6 +74,10 @@ public class KCITunesAPIQueryService {
                 URLQueryItem(name: "offset", value: "\(offset)"),
                 URLQueryItem(name: "entity", value: "album"),
             ]
+
+            if let e = mediaType?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "mediaType", value: e)) }
+            if let e = country?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "country", value: e)) }
+            if let e = lang?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "lang", value: e)) }
 
             guard let url = components?.url else {
                 completion(.failure(KCItunesConstants.NetworkError.invalidURL))
@@ -90,6 +104,9 @@ public class KCITunesAPIQueryService {
         withQuery query: String,
         limit: Int = 10,
         offset: Int = 0,
+        mediaType: String? = nil,
+        country: String? = nil,
+        lang: String? = nil,
         completion: @escaping (Result<[KCItunesArtist], Error>) -> Void) {
         
             // Construct the URL with query parameters
@@ -100,6 +117,10 @@ public class KCITunesAPIQueryService {
                 URLQueryItem(name: "offset", value: "\(offset)"),
                 URLQueryItem(name: "entity", value: "musicArtist"),
             ]
+
+            if let e = mediaType?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "mediaType", value: e)) }
+            if let e = country?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "country", value: e)) }
+            if let e = lang?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "lang", value: e)) }
 
             guard let url = components?.url else {
                 completion(.failure(KCItunesConstants.NetworkError.invalidURL))

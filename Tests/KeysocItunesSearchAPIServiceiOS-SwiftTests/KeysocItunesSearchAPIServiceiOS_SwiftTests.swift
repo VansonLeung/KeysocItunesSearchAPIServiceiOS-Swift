@@ -81,4 +81,42 @@ final class KeysocItunesSearchAPIServiceiOS_SwiftTests: XCTestCase {
         // Wait for the expectation to be fulfilled (timeout set to 10 seconds)
         wait(for: [expectation], timeout: 10.0)
     }
+    
+    
+    
+    func testParamCountry() {
+        let expectation = XCTestExpectation(description: "testParamCountry")
+
+        // Call country list
+        XCTAssertTrue(KCItunesParamCountryManager.shared.CountryDictMappingByAbbr["US"]?.english == "USA", "US should be equal to USA!")
+        XCTAssertTrue(KCItunesParamCountryManager.shared.CountryDictMappingByAbbr["CN"]?.english == "China", "CN should be equal to China!")
+        XCTAssertTrue(KCItunesParamCountryManager.shared.CountryDictMappingByAbbr["HK"]?.english == "Hong Kong SAR China", "HK should be equal to Hong Kong SAR China!")
+        expectation.fulfill()
+
+        // Wait for the expectation to be fulfilled (timeout set to 10 seconds)
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    
+    func testParamMediaType() {
+        let expectation = XCTestExpectation(description: "testParamMediaType")
+
+        // Call MediaType list
+        XCTAssertTrue(KCItunesParamMediaTypeManager.shared.MediaTypeDictMappingByVal["musicVideo"]?.val == "musicVideo", "musicVideo not found!")
+        expectation.fulfill()
+
+        // Wait for the expectation to be fulfilled (timeout set to 10 seconds)
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testParamLang() {
+        let expectation = XCTestExpectation(description: "testParamLang")
+
+        // Call Lang list
+        XCTAssertTrue(KCItunesParamLangManager.shared.LangDictMappingByVal["zh_hk"]?.val == "zh_hk", "zh_hk not found!")
+        expectation.fulfill()
+
+        // Wait for the expectation to be fulfilled (timeout set to 10 seconds)
+        wait(for: [expectation], timeout: 10.0)
+    }
 }
