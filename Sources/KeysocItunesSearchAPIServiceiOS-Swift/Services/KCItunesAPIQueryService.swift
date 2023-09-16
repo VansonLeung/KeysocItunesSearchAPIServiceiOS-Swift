@@ -75,7 +75,7 @@ public class KCITunesAPIQueryService {
                 URLQueryItem(name: "entity", value: "album"),
             ]
 
-            if let e = mediaType?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "mediaType", value: e)) }
+            if let e = mediaType?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "media", value: e)) }
             if let e = country?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "country", value: e)) }
             if let e = lang?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "lang", value: e)) }
 
@@ -118,7 +118,7 @@ public class KCITunesAPIQueryService {
                 URLQueryItem(name: "entity", value: "musicArtist"),
             ]
 
-            if let e = mediaType?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "mediaType", value: e)) }
+            if let e = mediaType?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "media", value: e)) }
             if let e = country?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "country", value: e)) }
             if let e = lang?.trimmingCharacters(in: .whitespacesAndNewlines) { components?.queryItems?.append(URLQueryItem(name: "lang", value: e)) }
 
