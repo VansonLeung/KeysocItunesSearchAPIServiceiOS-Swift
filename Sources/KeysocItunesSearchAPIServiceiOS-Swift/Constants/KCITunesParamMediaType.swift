@@ -26,7 +26,7 @@ public struct KCItunesParamMediaTypeManager {
                 val: dict["val"],
                 val_en: dict["val_en"],
                 val_zh_hk: dict["val_zh_hk"],
-                val_zh_cn: dict["val_zh_cn"],
+                val_zh_cn: dict["val_zh_cn"]
             )
         })
         
