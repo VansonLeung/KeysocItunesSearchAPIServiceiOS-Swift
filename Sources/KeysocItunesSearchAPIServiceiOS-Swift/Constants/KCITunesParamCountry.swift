@@ -8,19 +8,19 @@
 import Foundation
 
 public struct KCItunesParamCountry {
-    let abbr: String?
-    let chinese_sc: String?
-    let chinese_tc: String?
-    let code: String?
-    let english: String?
-    let spell: String?
-    let state: String?
-    let french: String?
-    let italian: String?
-    let spanish: String?
-    let japanese: String?
-    let russian: String?
-    let germen: String?
+    public let abbr: String?
+    public let chinese_sc: String?
+    public let chinese_tc: String?
+    public let code: String?
+    public let english: String?
+    public let spell: String?
+    public let state: String?
+    public let french: String?
+    public let italian: String?
+    public let spanish: String?
+    public let japanese: String?
+    public let russian: String?
+    public let germen: String?
 }
 
 public struct KCItunesParamCountryManager {

@@ -8,7 +8,7 @@
 import Foundation
 
 public struct KCItunesParamMediaType {
-    let val: String?
+    public let val: String?
 }
 
 public struct KCItunesParamMediaTypeManager {

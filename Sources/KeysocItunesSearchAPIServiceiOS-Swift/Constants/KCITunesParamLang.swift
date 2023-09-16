@@ -8,7 +8,7 @@
 import Foundation
 
 public struct KCItunesParamLang {
-    let val: String?
+    public let val: String?
 }
 
 public struct KCItunesParamLangManager {
