@@ -8,6 +8,7 @@
 import Foundation
 
 
+/// Define the Album struct to match the API response structure
 public struct KCItunesAlbum: Codable {
     public let wrapperType: String?
     public let collectionType: String?

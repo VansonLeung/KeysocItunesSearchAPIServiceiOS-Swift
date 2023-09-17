@@ -8,7 +8,7 @@
 import Foundation
 
 
-// Define the Song struct to match the API response structure
+/// Define the Song struct to match the API response structure
 public struct KCItunesSong: Codable {
     public let wrapperType: String?
     public let kind: String?

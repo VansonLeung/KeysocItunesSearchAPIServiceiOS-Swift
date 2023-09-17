@@ -14,6 +14,36 @@ public class KCITunesAPIQueryService {
         return KCITunesAPIQueryService()
     }
 
+    /// Runs iTunes search API for songs
+    ///
+    /// - Parameters:
+    ///   - withQuery query: `String`,
+    ///   - limit: list limit,
+    ///   - offset: list / page offset,
+    ///   - mediaType: `String?`, refer to `KCITunesParamMediaType`
+    ///   - country: `String?`, refer to `KCITunesParamCountry`
+    ///   - lang: `String?`, refer to `KCITunesParamLang`
+    ///   - completion: Callback of `KCItunesSong` list array, or any network error
+    ///
+    /// - Usage example:
+    ///
+    /// ```swift
+    /// KCITunesAPIQueryService.shared.searchSongs(
+    ///     withQuery: "Alex",
+    ///     limit: 10,
+    ///     offset: page * 10,
+    ///     mediaType: "podcast",
+    ///     country: "US",
+    ///     lang: "en_us"
+    /// ) { [weak self] result in
+    ///     switch result {
+    ///         case .success(let songs):
+    ///         ...
+    ///         case .failure(let error):
+    ///         ...
+    ///     }
+    /// }
+    /// ```
     public func searchSongs(
         withQuery query: String,
         limit: Int = 10,
@@ -57,6 +87,38 @@ public class KCITunesAPIQueryService {
             }
     }
     
+
+
+    /// Runs iTunes search API for albums
+    ///
+    /// - Parameters:
+    ///   - withQuery query: `String`,
+    ///   - limit: list limit,
+    ///   - offset: list / page offset,
+    ///   - mediaType: `String?`, refer to `KCITunesParamMediaType`
+    ///   - country: `String?`, refer to `KCITunesParamCountry`
+    ///   - lang: `String?`, refer to `KCITunesParamLang`
+    ///   - completion: Callback of `KCItunesSong` list array, or any network error
+    ///
+    /// - Usage example:
+    ///
+    /// ```swift
+    /// KCITunesAPIQueryService.shared.searchAlbums(
+    ///     withQuery: "Alex",
+    ///     limit: 10,
+    ///     offset: page * 10,
+    ///     mediaType: "podcast",
+    ///     country: "US",
+    ///     lang: "en_us"
+    /// ) { [weak self] result in
+    ///     switch result {
+    ///         case .success(let albums):
+    ///         ...
+    ///         case .failure(let error):
+    ///         ...
+    ///     }
+    /// }
+    /// ```
     public func searchAlbums(
         withQuery query: String,
         limit: Int = 10,
@@ -100,6 +162,38 @@ public class KCITunesAPIQueryService {
             }
     }
     
+
+
+    /// Runs iTunes search API for artists
+    ///
+    /// - Parameters:
+    ///   - withQuery query: `String`,
+    ///   - limit: list limit,
+    ///   - offset: list / page offset,
+    ///   - mediaType: `String?`, refer to `KCITunesParamMediaType`
+    ///   - country: `String?`, refer to `KCITunesParamCountry`
+    ///   - lang: `String?`, refer to `KCITunesParamLang`
+    ///   - completion: Callback of `KCItunesSong` list array, or any network error
+    ///
+    /// - Usage example:
+    ///
+    /// ```swift
+    /// KCITunesAPIQueryService.shared.searchArtists(
+    ///     withQuery: "Alex",
+    ///     limit: 10,
+    ///     offset: page * 10,
+    ///     mediaType: "podcast",
+    ///     country: "US",
+    ///     lang: "en_us"
+    /// ) { [weak self] result in
+    ///     switch result {
+    ///         case .success(let songs):
+    ///         ...
+    ///         case .failure(let error):
+    ///         ...
+    ///     }
+    /// }
+    /// ```
     public func searchArtists(
         withQuery query: String,
         limit: Int = 10,
@@ -144,7 +238,7 @@ public class KCITunesAPIQueryService {
 
 
 // Define a wrapper struct to match the top-level JSON structure
-public struct KCItunesAPIResponse<T: Codable>: Codable {
+private struct KCItunesAPIResponse<T: Codable>: Codable {
     let resultCount: Int
     let results: [T]
 }
