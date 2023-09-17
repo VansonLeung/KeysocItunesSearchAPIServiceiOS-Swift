@@ -17,6 +17,12 @@ dependencies: [
 
 ## Usages
 
+#### Import library
+
+```swift
+import KeysocItunesSearchAPIServiceiOS_Swift
+```
+
 #### 1. Runs iTunes search API for songs
 
 - Usage example:
