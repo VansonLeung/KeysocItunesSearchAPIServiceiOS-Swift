@@ -4,7 +4,7 @@ A service package for calling iTunes search API.
 
 ## Documentation
 
-https://github.com/VansonLeung/KeysocItunesSearchAPIServiceiOS-Swift-doc
+https://vansonleung.github.io/KeysocItunesSearchAPIServiceiOS-Swift-doc/
 
 
 ## Installation
