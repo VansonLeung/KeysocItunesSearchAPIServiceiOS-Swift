@@ -2,6 +2,11 @@
 
 A service package for calling iTunes search API.
 
+## Documentation
+
+https://github.com/VansonLeung/KeysocItunesSearchAPIServiceiOS-Swift-doc
+
+
 ## Installation
 
 The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but SwiftUITrackableScrollView does support its use on supported platforms.
