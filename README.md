@@ -48,6 +48,23 @@ KCITunesAPIQueryService.shared.searchSongs(
         ...
     }
 }
+
+// ... or concurrency
+
+do {
+    let items = try await KCITunesAPIQueryServiceAsync.shared.searchSongs(
+        withQuery: "Alex",
+        limit: 10,
+        offset: page * 10,
+        mediaType: "podcast",
+        country: "US",
+        lang: "en_us"
+    )
+    ...
+} catch {
+    ...
+}
+
 ```
 
 #### 2. Runs iTunes search API for albums
@@ -70,6 +87,23 @@ KCITunesAPIQueryService.shared.searchAlbums(
         ...
     }
 }
+
+// ... or concurrency
+
+do {
+    let items = try await KCITunesAPIQueryServiceAsync.shared.searchAlbums(
+        withQuery: "Alex",
+        limit: 10,
+        offset: page * 10,
+        mediaType: "podcast",
+        country: "US",
+        lang: "en_us"
+        )
+    ...
+} catch {
+    ...
+}
+
 ```
 
 #### 3. Runs iTunes search API for artists
@@ -78,7 +112,7 @@ KCITunesAPIQueryService.shared.searchAlbums(
 
 ```swift
 KCITunesAPIQueryService.shared.searchArtists(
-        withQuery: "Alex",
+    withQuery: "Alex",
     limit: 10,
     offset: page * 10,
     mediaType: "podcast",
@@ -92,4 +126,21 @@ KCITunesAPIQueryService.shared.searchArtists(
         ...
     }
 }
+
+// ... or concurrency
+
+do {
+    let items = try await KCITunesAPIQueryServiceAsync.shared.searchArtists(
+        withQuery: "Alex",
+        limit: 10,
+        offset: page * 10,
+        mediaType: "podcast",
+        country: "US",
+        lang: "en_us"
+    )
+    ...
+} catch {
+    ...
+}
+
 ```
