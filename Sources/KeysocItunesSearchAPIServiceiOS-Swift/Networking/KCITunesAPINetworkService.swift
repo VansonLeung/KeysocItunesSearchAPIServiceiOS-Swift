@@ -40,7 +40,7 @@ class KCITunesAPINetworkService {
     }
     
     
-    @available(macOS 12.0, *)
+    @available(macOS 10.15, *)
     func performRequestAsync<T: Codable>(
         _ request: URLRequest,
         decodingType: T.Type

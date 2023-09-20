@@ -7,7 +7,7 @@
 
 import Foundation
 
-@available(macOS 12.0, *)
+@available(macOS 10.15, *)
 public class KCITunesAPIQueryServiceAsync {
     private let baseURL = KCItunesConstants.shared.baseURL
 
