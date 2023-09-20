@@ -84,6 +84,65 @@ final class KeysocItunesSearchAPIServiceiOS_SwiftTests: XCTestCase {
     
     
     
+    
+    
+    
+    
+    func testAsyncSearchSongs() async {
+        let expectation = XCTestExpectation(description: "testSearchSongs")
+
+        // Call the search items function with your test parameters
+        do {
+            let items = try await KCITunesAPIQueryServiceAsync.shared.searchSongs(withQuery: "Alex")
+            XCTAssertFalse(items.isEmpty, "No items found")
+            XCTAssertTrue(items.count == 10, "items count != 10")
+        } catch {
+            XCTFail("Search query failed with error: \(error.localizedDescription)")
+        }
+
+        expectation.fulfill()
+    }
+
+    
+    func testAsyncSearchArtists() async {
+        let expectation = XCTestExpectation(description: "testSearchArtists")
+
+        // Call the search items function with your test parameters
+        do {
+            let items = try await KCITunesAPIQueryServiceAsync.shared.searchArtists(withQuery: "Alex")
+            XCTAssertFalse(items.isEmpty, "No items found")
+            XCTAssertTrue(items.count == 10, "items count != 10")
+        } catch {
+            XCTFail("Search query failed with error: \(error.localizedDescription)")
+        }
+
+        expectation.fulfill()
+    }
+    
+    
+    func testAsyncSearchAlbums() async {
+        let expectation = XCTestExpectation(description: "testSearchAlbums")
+
+        // Call the search items function with your test parameters
+        do {
+            let items = try await KCITunesAPIQueryServiceAsync.shared.searchAlbums(withQuery: "Alex")
+            XCTAssertFalse(items.isEmpty, "No items found")
+            XCTAssertTrue(items.count == 10, "items count != 10")
+        } catch {
+            XCTFail("Search query failed with error: \(error.localizedDescription)")
+        }
+
+        expectation.fulfill()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func testParamCountry() {
         let expectation = XCTestExpectation(description: "testParamCountry")
 

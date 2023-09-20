@@ -38,4 +38,26 @@ class KCITunesAPINetworkService {
             }
         }.resume()
     }
+    
+    
+    @available(macOS 12.0, *)
+    func performRequestAsync<T: Codable>(
+        _ request: URLRequest,
+        decodingType: T.Type
+    ) async throws -> T {
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        do {
+            let decodedData = try decoder.decode(decodingType, from: data)
+            return decodedData
+        } catch {
+            throw error
+        }
+    }
+
+
 }
